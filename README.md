@@ -155,7 +155,7 @@ export MAP_BASE_URL="https://yourdomain.dev"
 ### During the Workshop
 
 1. Share the event code with participants
-2. Direct them to the [Level 0 Codelab](https://codelabs.developers.google.com/way-back-home-level-0)
+2. Direct them to the [Level 0 Codelab](https://codelabs.developers.google.com/way-back-home-level-0/instructions)
 3. Monitor the live map at `https://yourdomain.dev/e/your-event-code`
 4. Celebrate as beacons light up across the planet!
 

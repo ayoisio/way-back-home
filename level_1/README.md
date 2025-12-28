@@ -129,7 +129,7 @@ gcloud run services update mission-analysis-ai \
 
 For detailed step-by-step instructions with explanations:
 
-**[📚 Level 1 Codelab →](https://codelabs.developers.google.com/way-back-home-level-1)**
+**[📚 Level 1 Codelab →](https://codelabs.developers.google.com/way-back-home-level-1/instructions)**
 
 ## 🏗️ Architecture
 

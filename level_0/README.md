@@ -87,7 +87,7 @@ Watch as your avatar is generated, uploaded, and registered. Then visit the worl
 
 For detailed step-by-step instructions with explanations:
 
-**[📚 Level 0 Codelab →](https://codelabs.developers.google.com/way-back-home-level-0)**
+**[📚 Level 0 Codelab →](https://codelabs.developers.google.com/way-back-home-level-0/instructions)**
 
 ## 🔑 Key Concepts
 

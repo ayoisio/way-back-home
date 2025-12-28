@@ -124,7 +124,7 @@ export default function HomePage() {
             
             {/* Codelab */}
             <a
-              href="https://codelabs.developers.google.com/way-back-home-level-0"
+              href="https://codelabs.developers.google.com/way-back-home-level-0/instructions"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-full bg-space-void-lighter/50 text-space-lavender/60 

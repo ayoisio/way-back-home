@@ -34,7 +34,7 @@ OUTPUTS_DIR = "outputs"
 if not os.path.exists(CONFIG_PATH):
     print("❌ config.json not found!")
     print("   Please complete Level 0 first.")
-    print("   See: https://codelabs.developers.google.com/way-back-home-level-0")
+    print("   See: https://codelabs.developers.google.com/way-back-home-level-0/instructions")
     sys.exit(1)
 
 with open(CONFIG_PATH) as f:
