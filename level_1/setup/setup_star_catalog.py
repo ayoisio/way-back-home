@@ -139,7 +139,6 @@ def main():
     print("\n" + "=" * 50)
     print("✅ Star catalog setup complete!")
     print(f"   Table: {PROJECT_ID}.{DATASET_ID}.{TABLE_ID}")
-    print("\nAttendees can now query this table via OneMCP BigQuery")
 
 
 if __name__ == "__main__":
