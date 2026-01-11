@@ -24,6 +24,7 @@ from ..models import (
     ParticipantInitResponse,
     ParticipantRegister,
     ParticipantResponse,
+    ParticipantUpdate,
 )
 
 
@@ -259,3 +260,28 @@ async def confirm_location(participant_id: str, x: int, y: int):
     })
 
     return {"status": "success", "x": x, "y": y, "location_confirmed": True}
+
+
+@router.patch("/{participant_id}", response_model=ParticipantResponse)
+async def update_participant_details(participant_id: str, updates: ParticipantUpdate):
+    """
+    Update participant details (including level overrides).
+
+    Used by developers or admin tools to manually set progress.
+    """
+    # Verify participant exists
+    participant = await get_participant(participant_id)
+    if not participant:
+        raise HTTPException(status_code=404, detail="Participant not found")
+
+    # Filter out None values to only update provided fields
+    update_data = {k: v for k, v in updates.dict().items() if v is not None}
+
+    if not update_data:
+        return ParticipantResponse(**participant)
+
+    await update_participant(participant_id, update_data)
+
+    # Return updated participant
+    updated = await get_participant(participant_id)
+    return ParticipantResponse(**updated)

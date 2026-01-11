@@ -10,6 +10,7 @@ from .participants import (
     ParticipantInitResponse,
     ParticipantRegister,
     ParticipantResponse,
+    ParticipantUpdate,
     UsernameCheckResponse,
 )
 from .common import HealthResponse, ConfigResponse
@@ -21,6 +22,7 @@ __all__ = [
     "ParticipantInitResponse",
     "ParticipantRegister",
     "ParticipantResponse",
+    "ParticipantUpdate",
     "UsernameCheckResponse",
     "HealthResponse",
     "ConfigResponse",

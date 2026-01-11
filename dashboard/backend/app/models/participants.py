@@ -46,6 +46,23 @@ class ParticipantResponse(BaseModel):
     registered_at: Optional[datetime] = None
     active: bool = True
     evidence_urls: Optional[dict] = None
+    level_0_complete: Optional[bool] = None
+    level_1_complete: Optional[bool] = None
+    level_2_complete: Optional[bool] = None
+    level_3_complete: Optional[bool] = None
+    level_4_complete: Optional[bool] = None
+    level_5_complete: Optional[bool] = None
+
+
+class ParticipantUpdate(BaseModel):
+    """Request model for updating participant fields (including overrides)."""
+    level_0_complete: Optional[bool] = None
+    level_1_complete: Optional[bool] = None
+    level_2_complete: Optional[bool] = None
+    level_3_complete: Optional[bool] = None
+    level_4_complete: Optional[bool] = None
+    level_5_complete: Optional[bool] = None
+    completion_percentage: Optional[int] = None
 
 
 class UsernameCheckResponse(BaseModel):
