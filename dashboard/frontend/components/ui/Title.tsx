@@ -137,7 +137,7 @@ export function MapFooterLinks() {
     <div className="flex items-center gap-2">
       {/* GitHub */}
       <a
-        href="https://github.com/ayoisio/way-back-home"
+        href="https://github.com/google-americas/way-back-home"
         target="_blank"
         rel="noopener noreferrer"
         className="p-2 rounded-full bg-space-void-lighter/30 text-space-lavender/40 
