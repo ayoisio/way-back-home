@@ -30,7 +30,7 @@ const DraggablePart = ({ id, name, type, hazardType, onDragStart }) => {
             <div className="flex-1">
                 <h4 className="font-mono text-sm uppercase font-bold tracking-wider">{name}</h4>
                 {hazardType && (
-                    <div className="text-[10px] font-bold tracking-widest uppercase mt-1 animate-ping-slow">
+                    <div className="text-xs font-black tracking-widest uppercase mt-1 text-red-500 animate-pulse bg-black/80 px-1 rounded inline-block">
                         HAZARD DETECTED
                     </div>
                 )}

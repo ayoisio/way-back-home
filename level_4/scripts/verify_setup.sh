@@ -82,7 +82,6 @@ DEPS=(
     "python-dotenv:dotenv"
     "google-adk:google.adk"
     "redis:redis"
-    "a2a-sdk:a2a-sdk"
     "pydantic:pydantic"
 )
 

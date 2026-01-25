@@ -44,11 +44,10 @@ def lookup_part_safety(part_name: str) -> str:
 
 ##REPLACE_MONITOR_HAZARD
 
-
-agent = Agent(
+MODEL_ID = os.getenv("MODEL_ID", "gemini-live-2.5-flash-preview-native-audio-09-2025")
+root_agent = Agent(
     name="dispatch_agent",
     model=MODEL_ID,
-    generate_content_config=generation_config, 
     #REPLACE_AGENT_TOOLS  
     instruction="""
     # SYSTEM CONFIGURATION
@@ -79,7 +78,7 @@ agent = Agent(
     1.  **IF** output is from `execute_architect`:
         *   **SAY**: "Architect Confirmed. The required subset is: [READ DATA EXACTLY]."
     
-    2.  **IF** output is from `monitor_for_hazard`:
+    2.  **IF** output is from `monitor_for_hazard` and ONLY if it detects a hazard:
         *   **SAY exactly what the tool output is**
 
     # ------------------------------------------------------------------

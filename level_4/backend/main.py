@@ -26,7 +26,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
-from dispatch_agent.agent import agent
+from dispatch_agent.agent import root_agent
 
 # Suppress noisy loggers
 logging.getLogger("websockets").setLevel(logging.WARNING)
@@ -62,7 +62,7 @@ session_service = InMemorySessionService()
 
 # Initialize Runner
 # (Session service handles history/state per user/session)
-runner = Runner(app_name=APP_NAME, agent=agent, session_service=session_service)
+runner = Runner(app_name=APP_NAME, agent=root_agent, session_service=session_service)
 
 # ========================================
 # WebSocket Endpoint
