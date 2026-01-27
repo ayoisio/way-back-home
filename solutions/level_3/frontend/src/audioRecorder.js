@@ -13,9 +13,15 @@ export class AudioRecorder {
         this.onAudioData = onAudioData;
 
         try {
-            //console.log("[AudioRecorder] Requesting microphone access...");
-            this.stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-            //console.log("[AudioRecorder] Microphone access granted.");
+            console.log("[AudioRecorder] Requesting microphone access...");
+            this.stream = await navigator.mediaDevices.getUserMedia({
+                audio: {
+                    echoCancellation: true,
+                    noiseSuppression: true,
+                    autoGainControl: true
+                }
+            });
+            console.log("[AudioRecorder] Microphone access granted.");
 
             this.audioContext = new (window.AudioContext || window.webkitAudioContext)({
                 sampleRate: this.sampleRate
@@ -24,18 +30,18 @@ export class AudioRecorder {
 
             // Ensure context is running (sometimes it starts suspended)
             if (this.audioContext.state === 'suspended') {
-                //console.log("[AudioRecorder] Context suspended. Resuming...");
+                console.log("[AudioRecorder] Context suspended. Resuming...");
                 await this.audioContext.resume();
-                //console.log(`[AudioRecorder] Context resumed. New State: ${this.audioContext.state}`);
+                console.log(`[AudioRecorder] Context resumed. New State: ${this.audioContext.state}`);
             }
 
             this.source = this.audioContext.createMediaStreamSource(this.stream);
-            //console.log("[AudioRecorder] Source reached.");
+            console.log("[AudioRecorder] Source reached.");
 
             // Use ScriptProcessor for simpler implementation (AudioWorklet is better but requires separate file serving)
             // Buffer size 4096 gives decent latency/performance balance
             this.processor = this.audioContext.createScriptProcessor(4096, 1, 1);
-            //console.log("[AudioRecorder] Processor created.");
+            console.log("[AudioRecorder] Processor created.");
 
             this.processor.onaudioprocess = (e) => {
                 // console.log("[AudioRecorder] Process fired"); // Too noisy
