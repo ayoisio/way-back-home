@@ -11,6 +11,7 @@ logger = logging.getLogger(__name__)
 
 # TODO: REPLACE_ADD_SESSION_MEMORY
 
+
 from agent.multimedia_agent import multimedia_agent
 from agent.tools.survivor_tools import get_survivors_with_skill, get_all_survivors, get_urgent_needs
 
@@ -125,13 +126,17 @@ agent_tools = [
     analyze_query,           # Debug tool
 ]
 
+
 # TODO: REPLACE_ADD_MEMORY_BANK_TOOL
+
 
 root_agent = Agent(
     model="gemini-2.5-flash",
     name="survivor_network_agent",
     instruction=agent_instruction,
     tools=agent_tools,
+
     # TODO: REPLACE_ADD_SUBAGENT
+
     # TODO: REPLACE_ADD_CALLBACK
 )
