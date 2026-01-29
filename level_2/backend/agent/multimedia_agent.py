@@ -23,6 +23,8 @@ logger = logging.getLogger(__name__)
 
 summary_instruction="" # TODO: REPLACE_SUMMARY_AGENT_PROMPT
 
+
+
 summary_agent = LlmAgent(
     name="SummaryAgent",
     model="gemini-2.5-flash",
